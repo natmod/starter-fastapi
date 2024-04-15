@@ -32,7 +32,7 @@ def download_audio_stream(video_url):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-def transcribe_audio(audio_stream, debug=True):
+def transcribe_audio(audio_stream, debug=False):
     try:
         response = client.audio.transcriptions.create(
             model="whisper-1",
